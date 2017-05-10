@@ -27,9 +27,11 @@ Biasanya, berbeda dari bentuk _private key_(termasuk parameter CRT):
 - _(1/q) mod p_ (dikenal sebagai _iqmp_).
 #
 Proses enkripsi pesan:
+
 Misalkan Bob ingin mengirim pesan **m** ke Alice. Bob mengubah **m** menjadi angka **n < N**,
 menggunakan protokol yang sebelumnya telah disepakati dan dikenal sebagai _padding scheme_.
 Maka Bob memiliki **n** dan mengetahui **N dan e**, yang telah diumumkan oleh Alice.
+
 Bob kemudian menghitung ciphertext **c** yang terkait pada n:
 
 **c = n^e mod N**
@@ -37,6 +39,7 @@ Bob kemudian menghitung ciphertext **c** yang terkait pada n:
 Perhitungan tersebut dapat diselesaikan dengan cepat menggunakan metode exponentiation by squaring. Bob kemudian mengirimkan c kepada Alice.
 #
 Proses dekripsi pesan:
+
 Alice menerima c dari Bob, dan mengetahui private key yang digunakan oleh Alice sendiri. Alice kemudian memulihkan n dari c dengan langkah-langkah berikut:
 
 **n = c^d mod N**
@@ -62,6 +65,6 @@ serta
 **c^d ≡ n (mod N)**
 
 ###### Referensi:
-- PPT KIJ Network Security Pak Tohari
-- https://id.wikipedia.org/wiki/RSA
-- http://octarapribadi.blogspot.co.id/2016/02/enkripsi-dan-dekripsi-menggunakan-rsa.html
+###### - PPT KIJ Network Security Pak Tohari
+###### - https://id.wikipedia.org/wiki/RSA
+###### - http://octarapribadi.blogspot.co.id/2016/02/enkripsi-dan-dekripsi-menggunakan-rsa.html
