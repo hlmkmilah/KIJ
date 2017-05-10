@@ -26,7 +26,7 @@ Biasanya, berbeda dari bentuk _private key_(termasuk parameter CRT):
 - _d mod (p-1)_ dan _d mod (q-1)_ (dikenal sebagai _dmp1_ dan _dmq1_).
 - _(1/q) mod p_ (dikenal sebagai _iqmp_).
 #
-Proses enkripsi pesan:
+**Proses enkripsi pesan:**
 
 Misalkan Bob ingin mengirim pesan **m** ke Alice. Bob mengubah **m** menjadi angka **n < N**,
 menggunakan protokol yang sebelumnya telah disepakati dan dikenal sebagai _padding scheme_.
@@ -38,17 +38,17 @@ Bob kemudian menghitung ciphertext **c** yang terkait pada n:
 
 Perhitungan tersebut dapat diselesaikan dengan cepat menggunakan metode exponentiation by squaring. Bob kemudian mengirimkan c kepada Alice.
 #
-Proses dekripsi pesan:
+**Proses dekripsi pesan:**
 
-Alice menerima c dari Bob, dan mengetahui private key yang digunakan oleh Alice sendiri. Alice kemudian memulihkan n dari c dengan langkah-langkah berikut:
+Alice menerima **c** dari Bob, dan mengetahui _private key_ yang digunakan oleh Alice sendiri. Alice kemudian memulihkan **n** dari **c** dengan langkah-langkah berikut:
 
 **n = c^d mod N**
 
-Perhitungan di atas akan menghasilkan n, dengan begitu Alice dapat mengembalikan pesan semula m. Prosedur dekripsi bekerja karena
+Perhitungan diatas akan menghasilkan **n**, dengan begitu Alice dapat mengembalikan pesan semula **m**. Prosedur dekripsi bekerja karena
 
 **c^d ≡ (n^(e))^d ≡ n^(ed) (mod N)**
 
-Kemudian, dikarenakan ed ≡ 1 (mod p-1) dan ed ≡ 1 (mod q-1), hasil dari _Fermat's little theorem_.
+Kemudian, dikarenakan **ed ≡ 1 (mod p-1) dan ed ≡ 1 (mod q-1)**, hasil dari _Fermat's little theorem_.
 
 **n^(ed) ≡ n (mod p)**
 
